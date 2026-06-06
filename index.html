@@ -6,308 +6,307 @@
     <title>Ram Prasanth Y | Java Backend Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#0f172a',
-                            primary: '#3b82f6',
-                            secondary: '#64748b',
-                            light: '#f8fafc'
+                            dark: '#1e293b',    // Slate 800 - Softer and more professional than pure black
+                            primary: '#0f766e', // Teal 700 - Trustworthy, modern, and sophisticated
+                            accent: '#d97706',  // Amber 600 - Adds warmth and a "human" energy
+                            light: '#fafaf9',   // Stone 50 - A warm off-white for comfortable reading
+                            surface: '#ffffff'
                         }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], // Clean, modern body text
+                        serif: ['Lora', 'serif'],      // Elegant, editorial headings
                     }
                 }
             }
         }
     </script>
+    <style>
+        /* Subtle background pattern for texture */
+        .bg-pattern {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
 </head>
-<body class="bg-brand-light text-brand-dark font-sans antialiased">
+<body class="bg-brand-light text-brand-dark font-sans antialiased selection:bg-brand-primary selection:text-white">
 
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+    <nav class="sticky top-0 z-50 bg-brand-light/80 backdrop-blur-lg border-b border-gray-200 shadow-sm">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
+            <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0">
-                    <a href="#home" class="text-xl font-bold tracking-tight text-brand-dark">
-                        Ram Prasanth<span class="text-brand-primary">.Y</span>
+                    <a href="#home" class="text-2xl font-serif font-bold tracking-tight text-brand-dark">
+                        Ram Prasanth<span class="text-brand-accent">.</span>
                     </a>
                 </div>
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-6">
-                        <a href="#home" class="text-brand-secondary hover:text-brand-primary px-3 py-2 text-sm font-medium transition-colors">Home</a>
-                        <a href="#about" class="text-brand-secondary hover:text-brand-primary px-3 py-2 text-sm font-medium transition-colors">About & Skills</a>
-                        <a href="#experience" class="text-brand-secondary hover:text-brand-primary px-3 py-2 text-sm font-medium transition-colors">Experience</a>
-                        <a href="#projects" class="text-brand-secondary hover:text-brand-primary px-3 py-2 text-sm font-medium transition-colors">Projects</a>
-                        <a href="#education" class="text-brand-secondary hover:text-brand-primary px-3 py-2 text-sm font-medium transition-colors">Education & More</a>
-                        <a href="#contact" class="bg-brand-primary text-white hover:bg-blue-600 px-4 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="text-gray-600 hover:text-brand-primary text-sm font-medium transition-colors">Home</a>
+                        <a href="#about" class="text-gray-600 hover:text-brand-primary text-sm font-medium transition-colors">About</a>
+                        <a href="#experience" class="text-gray-600 hover:text-brand-primary text-sm font-medium transition-colors">Experience</a>
+                        <a href="#projects" class="text-gray-600 hover:text-brand-primary text-sm font-medium transition-colors">Projects</a>
+                        <a href="#contact" class="bg-brand-primary text-white hover:bg-teal-800 px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg">Let's Talk</a>
                     </div>
                 </div>
                 <div class="md:hidden">
-                    <button type="button" onclick="toggleMobileMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-brand-secondary hover:text-brand-dark hover:bg-gray-100 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+                    <button type="button" onclick="toggleMobileMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-brand-dark focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                        <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div class="hidden md:hidden id" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-b border-gray-200">
-                <a href="#home" onclick="toggleMobileMenu()" class="block text-brand-secondary hover:text-brand-primary px-3 py-2 text-base font-medium">Home</a>
-                <a href="#about" onclick="toggleMobileMenu()" class="block text-brand-secondary hover:text-brand-primary px-3 py-2 text-base font-medium">About & Skills</a>
-                <a href="#experience" onclick="toggleMobileMenu()" class="block text-brand-secondary hover:text-brand-primary px-3 py-2 text-base font-medium">Experience</a>
-                <a href="#projects" onclick="toggleMobileMenu()" class="block text-brand-secondary hover:text-brand-primary px-3 py-2 text-base font-medium">Projects</a>
-                <a href="#education" onclick="toggleMobileMenu()" class="block text-brand-secondary hover:text-brand-primary px-3 py-2 text-base font-medium">Education & More</a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="block bg-brand-primary text-white text-center px-3 py-2 rounded-md text-base font-medium">Contact</a>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-4 pt-2 pb-6 space-y-2 bg-brand-light border-b border-gray-200 shadow-lg">
+                <a href="#home" onclick="toggleMobileMenu()" class="block text-gray-600 hover:text-brand-primary py-2 text-base font-medium">Home</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="block text-gray-600 hover:text-brand-primary py-2 text-base font-medium">About & Skills</a>
+                <a href="#experience" onclick="toggleMobileMenu()" class="block text-gray-600 hover:text-brand-primary py-2 text-base font-medium">Experience</a>
+                <a href="#projects" onclick="toggleMobileMenu()" class="block text-gray-600 hover:text-brand-primary py-2 text-base font-medium">Projects</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="block bg-brand-primary text-white text-center px-4 py-3 mt-4 rounded-lg text-base font-medium shadow-md">Let's Talk</a>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="min-h-[calc(100vh-4rem)] flex items-center bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24 grid md:grid-cols-12 gap-8 items-center">
-            <div class="md:col-span-7 space-y-6 text-center md:text-left">
-                <div class="inline-flex items-center gap-2 bg-blue-50 text-brand-primary px-3 py-1 rounded-full text-sm font-semibold tracking-wide uppercase">
-                    <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span> Open to Opportunities
+    <section id="home" class="relative min-h-[calc(100vh-5rem)] flex items-center bg-pattern overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-light"></div>
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 grid md:grid-cols-12 gap-12 items-center">
+            
+            <div class="md:col-span-7 space-y-8 text-center md:text-left order-2 md:order-1">
+                <div class="inline-flex items-center gap-2 bg-teal-50 border border-teal-100 text-brand-primary px-4 py-1.5 rounded-full text-sm font-medium tracking-wide shadow-sm">
+                    <i class="fa-solid fa-location-dot text-brand-accent"></i> Based in Bangalore, India
                 </div>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-dark tracking-tight">
-                    Hi, I'm <span class="text-brand-primary">Ram Prasanth Y</span>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-brand-dark leading-tight">
+                    Engineering reliable backend systems with a <span class="text-brand-primary italic">human touch.</span>
                 </h1>
-                <p class="text-xl sm:text-2xl font-bold text-brand-secondary">
-                    Java Backend Developer
+                
+                <p class="text-gray-600 text-lg sm:text-xl max-w-2xl mx-auto md:mx-0 leading-relaxed">
+                    Hi, I'm <strong>Ram Prasanth Y</strong>. I'm a Java Developer with 3 years of experience crafting scalable microservices. I bridge the gap between complex enterprise data and seamless user experiences.
                 </p>
-                <p class="text-gray-600 text-base sm:text-lg max-w-xl mx-auto md:mx-0 leading-relaxed">
-                    Results-oriented developer with 3 years of experience designing and developing scalable microservices and enterprise backend systems using Java, Spring Boot, REST APIs, and SAP BTP[cite: 4]. Proven ability to optimize system performance and data pipelines in production environments[cite: 5].
-                </p>
-                <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
-                    <a href="#projects" class="bg-brand-dark text-white hover:bg-gray-800 px-6 py-3 rounded-lg font-medium shadow-md transition-all transform hover:-translate-y-0.5">
-                        View My Work
+                
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
+                    <a href="#projects" class="bg-brand-dark text-white hover:bg-gray-800 px-7 py-3.5 rounded-full font-medium shadow-lg transition-all transform hover:-translate-y-1 flex items-center gap-2">
+                        View My Work <i class="fa-solid fa-arrow-right text-sm"></i>
                     </a>
-                    <a href="#contact" class="border-2 border-brand-primary text-brand-primary hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition-all transform hover:-translate-y-0.5">
+                    <a href="#contact" class="bg-white border-2 border-brand-primary text-brand-primary hover:bg-teal-50 px-7 py-3.5 rounded-full font-medium transition-all transform hover:-translate-y-1">
                         Get In Touch
                     </a>
                 </div>
-                <div class="flex justify-center md:justify-start gap-6 pt-4 text-gray-400 text-xl">
-                    <a href="tel:+917448430573" class="hover:text-brand-primary transition-colors" title="Call Me"><i class="fa-solid fa-phone"></i></a>
-                    <a href="mailto:ram20062001@gmail.com" class="hover:text-brand-primary transition-colors" title="Email Me"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="https://linkedin.com/in/ram-prasanth-y" target="_blank" class="hover:text-brand-primary transition-colors" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
             </div>
-            <div class="md:col-span-5 flex justify-center mt-8 md:mt-0">
-                <div class="relative w-64 h-64 sm:w-80 sm:h-80 bg-gradient-to-tr from-brand-primary to-blue-300 rounded-2xl shadow-2xl flex items-center justify-center transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                    <div class="absolute inset-2 bg-brand-dark rounded-xl flex flex-col items-center justify-center text-white p-6 text-center">
-                        <i class="fa-solid fa-code text-5xl text-brand-primary mb-4 animate-bounce"></i>
-                        <span class="text-3xl font-extrabold">3+ Years</span>
-                        <span class="text-gray-400 text-sm tracking-wider uppercase mt-1">Backend Experience</span>
+
+            <div class="md:col-span-5 flex justify-center order-1 md:order-2">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-brand-primary/20 rounded-full blur-2xl"></div>
+                    
+                    <img src="https://ui-avatars.com/api/?name=Ram+Prasanth&background=0f766e&color=fff&size=400" 
+                         alt="Ram Prasanth Y" 
+                         class="relative w-56 h-56 sm:w-72 sm:h-72 object-cover rounded-full border-8 border-white shadow-2xl z-10 transition-transform duration-500 hover:scale-105">
+                    
+                    <div class="absolute bottom-4 -left-8 bg-white p-4 rounded-xl shadow-xl z-20 flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+                        <div class="bg-teal-100 text-brand-primary p-2 rounded-lg">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 font-medium">Experience</p>
+                            <p class="text-sm font-bold text-brand-dark">3+ Years</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <section id="about" class="py-16 md:py-24 bg-brand-light">
+    <section id="about" class="py-20 md:py-28 bg-brand-surface border-y border-gray-100">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">Area of Expertise</h2>
-                <div class="h-1 w-20 bg-brand-primary mx-auto mt-4 rounded"></div>
-                <p class="mt-4 text-lg text-brand-secondary">My technical toolkit built to craft robust, high-performance, and scalable enterprise platforms.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-blue-50 text-brand-primary rounded-lg flex items-center justify-center mb-4 text-xl font-bold">
-                        <i class="fa-solid fa-laptop-code"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-brand-dark mb-3">Core & Frameworks</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">Java (8+)</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">Spring Boot (3.x)</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">Spring MVC</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">Hibernate</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">JPA</span>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-blue-50 text-brand-primary rounded-lg flex items-center justify-center mb-4 text-xl font-bold">
-                        <i class="fa-solid fa-database"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-brand-dark mb-3">Databases & Arch</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">Microservices</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">RESTful APIs</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">PostgreSQL</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">MySQL</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">SAP HANA</span>
+            <div class="grid lg:grid-cols-12 gap-16 items-start">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-brand-dark">Beyond the Code</h2>
+                    <div class="h-1 w-16 bg-brand-accent rounded"></div>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        I believe the best software is built by people who understand the real-world impact of their code. At Incture Technologies, I focus on building resilient APIs and optimizing databases using Java, Spring Boot, and SAP BTP.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        When I'm not architecting microservices or mentoring junior developers, I channel my creativity into <strong class="text-brand-dark">photography and photo editing</strong>. I find that composing a great photograph requires the same attention to detail and balance as writing clean, maintainable code.
+                    </p>
+                    
+                    <div class="pt-6 flex gap-4">
+                        <a href="https://linkedin.com/in/ram-prasanth-y" target="_blank" class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center text-brand-primary hover:bg-brand-primary hover:text-white transition-all shadow-sm">
+                            <i class="fa-brands fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="mailto:ram20062001@gmail.com" class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center text-brand-primary hover:bg-brand-primary hover:text-white transition-all shadow-sm">
+                            <i class="fa-solid fa-envelope text-xl"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-blue-50 text-brand-primary rounded-lg flex items-center justify-center mb-4 text-xl font-bold">
-                        <i class="fa-solid fa-cloud"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-brand-dark mb-3">Cloud & DevOps</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">SAP BTP</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">Docker</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">Git</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">Maven</span>
-                    </div>
-                </div>
+                <div class="lg:col-span-7">
+                    <div class="bg-brand-light p-8 rounded-3xl border border-gray-100 shadow-sm">
+                        <h3 class="text-2xl font-serif font-bold text-brand-dark mb-8">Technical Expertise</h3>
+                        
+                        <div class="space-y-8">
+                            <div>
+                                <h4 class="text-sm font-bold text-brand-accent uppercase tracking-wider mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-server"></i> Core & Frameworks
+                                </h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-white border border-gray-200 text-gray-700 text-sm px-4 py-2 rounded-lg font-medium shadow-sm hover:border-brand-primary transition-colors">Java (8+)</span>
+                                    <span class="bg-white border border-gray-200 text-gray-700 text-sm px-4 py-2 rounded-lg font-medium shadow-sm hover:border-brand-primary transition-colors">Spring Boot (3.x)</span>
+                                    <span class="bg-white border border-gray-200 text-gray-700 text-sm px-4 py-2 rounded-lg font-medium shadow-sm hover:border-brand-primary transition-colors">Hibernate & JPA</span>
+                                    <span class="bg-white border border-gray-200 text-gray-700 text-sm px-4 py-2 rounded-lg font-medium shadow-sm hover:border-brand-primary transition-colors">Microservices</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-sm font-bold text-brand-accent uppercase tracking-wider mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-database"></i> Database & Cloud
+                                </h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-white border border-gray-200 text-gray-700 text-sm px-4 py-2 rounded-lg font-medium shadow-sm hover:border-brand-primary transition-colors">PostgreSQL</span>
+                                    <span class="bg-white border border-gray-200 text-gray-700 text-sm px-4 py-2 rounded-lg font-medium shadow-sm hover:border-brand-primary transition-colors">MySQL</span>
+                                    <span class="bg-white border border-gray-200 text-gray-700 text-sm px-4 py-2 rounded-lg font-medium shadow-sm hover:border-brand-primary transition-colors">SAP HANA & BTP</span>
+                                    <span class="bg-white border border-gray-200 text-gray-700 text-sm px-4 py-2 rounded-lg font-medium shadow-sm hover:border-brand-primary transition-colors">Docker</span>
+                                </div>
+                            </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-blue-50 text-brand-primary rounded-lg flex items-center justify-center mb-4 text-xl font-bold">
-                        <i class="fa-solid fa-vial"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-brand-dark mb-3">Testing & Validation</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">JUnit</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">Mockito</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">JMeter</span>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-blue-50 text-brand-primary rounded-lg flex items-center justify-center mb-4 text-xl font-bold">
-                        <i class="fa-solid fa-robot"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-brand-dark mb-3">AI Productivity</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">Claude</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">GitHub Copilot</span>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-blue-50 text-brand-primary rounded-lg flex items-center justify-center mb-4 text-xl font-bold">
-                        <i class="fa-solid fa-language"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-brand-dark mb-3">Languages spoken</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">Tamil (Native)</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">English (Professional)</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">Kannada (Limited)</span>
-                        <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-md font-medium">Telugu (Elementary)</span>
+                            <div>
+                                <h4 class="text-sm font-bold text-brand-accent uppercase tracking-wider mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-wrench"></i> Tools & Productivity
+                                </h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-white border border-gray-200 text-gray-700 text-sm px-4 py-2 rounded-lg font-medium shadow-sm hover:border-brand-primary transition-colors">JUnit & Mockito</span>
+                                    <span class="bg-white border border-gray-200 text-gray-700 text-sm px-4 py-2 rounded-lg font-medium shadow-sm hover:border-brand-primary transition-colors">Git & Maven</span>
+                                    <span class="bg-teal-50 border border-teal-200 text-brand-primary text-sm px-4 py-2 rounded-lg font-medium shadow-sm">AI: Claude & Copilot</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-16 md:py-24 bg-white">
+    <section id="experience" class="py-20 md:py-28 bg-brand-light">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">Work Experience</h2>
-                <div class="h-1 w-20 bg-brand-primary mx-auto mt-4 rounded"></div>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-brand-dark">Professional Journey</h2>
+                <div class="h-1 w-16 bg-brand-accent mx-auto mt-6 rounded"></div>
             </div>
 
-            <div class="relative border-l border-gray-200 ml-4 md:ml-6 space-y-12">
+            <div class="relative border-l-2 border-brand-primary/30 ml-4 md:ml-6 space-y-14">
                 
-                <div class="relative pl-8">
-                    <div class="absolute -left-[9px] top-1.5 bg-brand-primary w-4 h-4 rounded-full border-4 border-white"></div>
-                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-                        <h3 class="text-xl font-bold text-brand-dark">Software Engineer</h3>
-                        <span class="bg-blue-50 text-brand-primary text-xs font-semibold px-2.5 py-1 rounded-full">Aug 2025 - Present</span>
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[11px] top-1.5 bg-brand-primary w-5 h-5 rounded-full border-4 border-brand-light shadow-sm group-hover:scale-125 transition-transform"></div>
+                    <div class="bg-brand-surface p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 group-hover:shadow-lg transition-shadow">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <div>
+                                <h3 class="text-2xl font-serif font-bold text-brand-dark">Software Engineer</h3>
+                                <p class="text-brand-primary font-medium mt-1">Incture Technologies &middot; Bangalore</p>
+                            </div>
+                            <span class="inline-block bg-teal-50 text-brand-primary text-sm font-semibold px-4 py-1.5 rounded-full self-start sm:self-auto">Aug 2025 - Present</span>
+                        </div>
+                        <ul class="text-gray-600 space-y-3 list-none">
+                            <li class="flex gap-3"><i class="fa-solid fa-check text-brand-accent mt-1 text-sm"></i> <span>Develop and maintain Spring Boot microservices supporting enterprise-scale workloads, ensuring high availability.</span></li>
+                            <li class="flex gap-3"><i class="fa-solid fa-check text-brand-accent mt-1 text-sm"></i> <span>Automated critical data synchronization pipelines between SAP ECC and PostgreSQL, significantly boosting data accuracy.</span></li>
+                            <li class="flex gap-3"><i class="fa-solid fa-check text-brand-accent mt-1 text-sm"></i> <span>Design and document robust REST APIs using Swagger/OpenAPI for seamless cross-functional team integrations.</span></li>
+                            <li class="flex gap-3"><i class="fa-solid fa-check text-brand-accent mt-1 text-sm"></i> <span>Actively mentor junior developers and enforce strict code quality standards to reduce post-release bugs.</span></li>
+                        </ul>
                     </div>
-                    <p class="text-md font-semibold text-brand-secondary mb-3">Incture Technologies &middot; Bangalore</p>
-                    <ul class="text-gray-600 space-y-2 list-disc pl-4 text-sm sm:text-base">
-                        <li>Developed and maintained Spring Boot microservices supporting enterprise-scale workloads, ensuring high availability and fault tolerance[cite: 19].</li>
-                        <li>Automated critical data synchronization pipeline between SAP ECC and PostgreSQL, eliminating manual intervention and boosting data accuracy[cite: 20].</li>
-                        <li>Designed and documented robust REST APIs using Swagger/OpenAPI, facilitating seamless integration for cross-functional frontend and mobile teams[cite: 21].</li>
-                        <li>Mentored junior developers and enforced rigid code quality standards through structured code reviews, reducing post-release bugs[cite: 22].</li>
-                        <li>Leveraged Claude and GitHub Copilot to refactor legacy code and optimize complex backend processing logic, improving code maintainability and reducing post-release bugs[cite: 23].</li>
-                    </ul>
                 </div>
 
-                <div class="relative pl-8">
-                    <div class="absolute -left-[9px] top-1.5 bg-gray-300 w-4 h-4 rounded-full border-4 border-white"></div>
-                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-                        <h3 class="text-xl font-bold text-brand-dark">Associate Software Engineer</h3>
-                        <span class="bg-gray-100 text-gray-600 text-xs font-semibold px-2.5 py-1 rounded-full">Jul 2023 - Jul 2025</span>
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[11px] top-1.5 bg-gray-400 w-5 h-5 rounded-full border-4 border-brand-light group-hover:bg-brand-primary transition-colors"></div>
+                    <div class="bg-transparent hover:bg-brand-surface p-6 sm:p-8 rounded-2xl border border-transparent hover:border-gray-100 hover:shadow-lg transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <div>
+                                <h3 class="text-2xl font-serif font-bold text-brand-dark">Associate Software Engineer</h3>
+                                <p class="text-gray-600 font-medium mt-1">Incture Technologies &middot; Bangalore</p>
+                            </div>
+                            <span class="inline-block bg-gray-100 text-gray-600 text-sm font-semibold px-4 py-1.5 rounded-full self-start sm:self-auto">Jul 2023 - Jul 2025</span>
+                        </div>
+                        <ul class="text-gray-600 space-y-3 list-none">
+                            <li class="flex gap-3"><i class="fa-solid fa-arrow-right text-gray-400 mt-1 text-sm"></i> <span>Designed and implemented RESTful APIs using Java and Spring Boot to improve backend response times.</span></li>
+                            <li class="flex gap-3"><i class="fa-solid fa-arrow-right text-gray-400 mt-1 text-sm"></i> <span>Resolved production issues through intensive debugging and backend optimization.</span></li>
+                        </ul>
                     </div>
-                    <p class="text-md font-semibold text-brand-secondary mb-3">Incture Technologies &middot; Bangalore</p>
-                    <ul class="text-gray-600 space-y-2 list-disc pl-4 text-sm sm:text-base">
-                        <li>Designed and implemented RESTful APIs using Java and Spring Boot, improving response times and backend performance[cite: 28].</li>
-                        <li>Resolved production issues through debugging, integration testing, and backend optimization[cite: 29].</li>
-                        <li>Collaborated closely with QA and frontend teams to ensure smooth deployment and to develop comprehensive test plans, reducing post-release defects[cite: 30].</li>
-                    </ul>
                 </div>
 
-                <div class="relative pl-8">
-                    <div class="absolute -left-[9px] top-1.5 bg-gray-300 w-4 h-4 rounded-full border-4 border-white"></div>
-                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-                        <h3 class="text-xl font-bold text-brand-dark">Academic Intern</h3>
-                        <span class="bg-gray-100 text-gray-600 text-xs font-semibold px-2.5 py-1 rounded-full">Jan 2023 - Jul 2023</span>
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[11px] top-1.5 bg-gray-400 w-5 h-5 rounded-full border-4 border-brand-light group-hover:bg-brand-primary transition-colors"></div>
+                    <div class="bg-transparent hover:bg-brand-surface p-6 sm:p-8 rounded-2xl border border-transparent hover:border-gray-100 hover:shadow-lg transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <div>
+                                <h3 class="text-xl font-serif font-bold text-brand-dark">Academic Intern</h3>
+                                <p class="text-gray-600 font-medium mt-1">Incture Technologies</p>
+                            </div>
+                            <span class="inline-block bg-gray-100 text-gray-600 text-sm font-semibold px-4 py-1.5 rounded-full self-start sm:self-auto">Jan 2023 - Jul 2023</span>
+                        </div>
+                        <p class="text-gray-600 pl-7">Gained foundational hands-on experience in SQL query optimization, database design, and building CRUD operations using JDBC and Hibernate.</p>
                     </div>
-                    <p class="text-md font-semibold text-brand-secondary mb-3">Incture Technologies &middot; Bangalore</p>
-                    <ul class="text-gray-600 space-y-2 list-disc pl-4 text-sm sm:text-base">
-                        <li>Implemented CRUD operations using Java, JDBC, and Hibernate with MySQL[cite: 33].</li>
-                        <li>Gained hands-on experience in SQL query optimization and database design[cite: 33].</li>
-                    </ul>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-16 md:py-24 bg-brand-light">
+    <section id="projects" class="py-20 md:py-28 bg-brand-surface border-t border-gray-100">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">Key Client Projects</h2>
-                <div class="h-1 w-20 bg-brand-primary mx-auto mt-4 rounded"></div>
-                <p class="mt-4 text-lg text-brand-secondary">Enterprise applications engineered for Fortune 500 and global market leaders.</p>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-brand-dark">Key Client Impact</h2>
+                <div class="h-1 w-16 bg-brand-accent mx-auto mt-6 rounded"></div>
+                <p class="mt-6 text-lg text-gray-600">Delivering robust backend solutions for Fortune 500 companies and global market leaders.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col justify-between hover:shadow-lg transition-all transform hover:-translate-y-1">
-                    <div class="p-6">
-                        <div class="text-xs font-bold text-brand-primary tracking-wider uppercase mb-1">Fortune 500 Cosmetic Company</div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">ELC Workflows</h3>
-                        <p class="text-gray-600 text-sm sm:text-base mb-4">
-                            Designed and developed enterprise-grade microservices to manage credit return and destruction claim workflows while optimizing core background scheduler performance[cite: 37, 38].
-                        </p>
-                    </div>
-                    <div class="px-6 pb-6 pt-2 border-t border-gray-50 bg-gray-50/50">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="bg-white border text-gray-600 text-xs px-2 py-0.5 rounded font-medium">Microservices</span>
-                            <span class="bg-white border text-gray-600 text-xs px-2 py-0.5 rounded font-medium">Schedulers</span>
-                            <span class="bg-white border text-gray-600 text-xs px-2 py-0.5 rounded font-medium">Debugging</span>
+                <div class="bg-brand-light rounded-2xl border border-gray-200 overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="p-8 flex-grow">
+                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-brand-primary text-xl mb-6">
+                            <i class="fa-solid fa-briefcase"></i>
                         </div>
+                        <h3 class="text-xl font-serif font-bold text-brand-dark mb-2">ELC Workflows</h3>
+                        <p class="text-sm font-bold text-brand-accent uppercase tracking-wider mb-4">Fortune 500 Cosmetic Co.</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Designed and developed enterprise-grade microservices to manage credit return and destruction claim workflows, optimizing core background scheduler performance for live environments.
+                        </p>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col justify-between hover:shadow-lg transition-all transform hover:-translate-y-1">
-                    <div class="p-6">
-                        <div class="text-xs font-bold text-brand-primary tracking-wider uppercase mb-1">Global Energy Enterprise</div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Suncor Energy Logistics</h3>
-                        <p class="text-gray-600 text-sm sm:text-base mb-4">
-                            Led full-cycle backend development of critical inventory and logistics modules including Goods Issue, Transfer Posting, and Goods Receiving using clean architecture practices[cite: 42, 43].
-                        </p>
-                    </div>
-                    <div class="px-6 pb-6 pt-2 border-t border-gray-50 bg-gray-50/50">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="bg-white border text-gray-600 text-xs px-2 py-0.5 rounded font-medium">OOP Design</span>
-                            <span class="bg-white border text-gray-600 text-xs px-2 py-0.5 rounded font-medium">Logistics Logic</span>
-                            <span class="bg-white border text-gray-600 text-xs px-2 py-0.5 rounded font-medium">Clean Arch</span>
+                <div class="bg-brand-dark text-white rounded-2xl border border-gray-800 overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative shadow-lg">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-primary rounded-full blur-3xl opacity-50"></div>
+                    <div class="p-8 flex-grow relative z-10">
+                        <div class="w-12 h-12 bg-gray-800 rounded-xl shadow-sm flex items-center justify-center text-brand-accent text-xl mb-6">
+                            <i class="fa-solid fa-industry"></i>
                         </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-2">Suncor Energy Logistics</h3>
+                        <p class="text-sm font-bold text-teal-400 uppercase tracking-wider mb-4">Global Energy Enterprise</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Led full-cycle backend development of critical inventory and logistics modules including Goods Issue and Transfer Posting, strictly adhering to clean architecture practices.
+                        </p>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col justify-between hover:shadow-lg transition-all transform hover:-translate-y-1">
-                    <div class="p-6">
-                        <div class="text-xs font-bold text-brand-primary tracking-wider uppercase mb-1">Mahesh Oils</div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Sales Force Automation</h3>
-                        <p class="text-gray-600 text-sm sm:text-base mb-4">
-                            Built a highly reliable scalable backend system and scheduler services to automate end-to-end sales processing and sync multi-platform database records seamlessly[cite: 46].
-                        </p>
-                    </div>
-                    <div class="px-6 pb-6 pt-2 border-t border-gray-50 bg-gray-50/50">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="bg-white border text-gray-600 text-xs px-2 py-0.5 rounded font-medium">SAP ECC Link</span>
-                            <span class="bg-white border text-gray-600 text-xs px-2 py-0.5 rounded font-medium">PostgreSQL</span>
-                            <span class="bg-white border text-gray-600 text-xs px-2 py-0.5 rounded font-medium">Automation</span>
+                <div class="bg-brand-light rounded-2xl border border-gray-200 overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="p-8 flex-grow">
+                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-brand-primary text-xl mb-6">
+                            <i class="fa-solid fa-chart-line"></i>
                         </div>
+                        <h3 class="text-xl font-serif font-bold text-brand-dark mb-2">Sales Force Automation</h3>
+                        <p class="text-sm font-bold text-brand-accent uppercase tracking-wider mb-4">Mahesh Oils</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Built a highly reliable scalable backend system and scheduler services to automate end-to-end sales processing and synchronize multi-platform database records seamlessly.
+                        </p>
                     </div>
                 </div>
 
@@ -315,92 +314,40 @@
         </div>
     </section>
 
-    <section id="education" class="py-16 md:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12">
-            
-            <div>
-                <h2 class="text-2xl font-bold text-brand-dark mb-6 flex items-center gap-3">
-                    <i class="fa-solid fa-graduation-cap text-brand-primary"></i> Education
-                </h2>
-                <div class="space-y-6">
-                    <div class="border-l-2 border-gray-100 pl-4">
-                        <h4 class="text-lg font-bold text-brand-dark">B.E. Computer Science Engineering</h4>
-                        <p class="text-brand-secondary font-medium">Coimbatore Institute of Technology</p>
-                        <div class="flex gap-4 text-sm text-gray-500 mt-1">
-                            <span><i class="fa-regular fa-calendar mr-1"></i> 2019 - 2023</span>
-                            <span><i class="fa-solid fa-star mr-1 text-yellow-500"></i> CGPA: 8.56</span>
-                        </div>
-                    </div>
-                    <div class="border-l-2 border-gray-100 pl-4">
-                        <h4 class="text-lg font-bold text-brand-dark">Higher Secondary School - Computer Science</h4>
-                        <p class="text-brand-secondary font-medium">SRT Universal Hr Sec School</p>
-                        <div class="flex gap-4 text-sm text-gray-500 mt-1">
-                            <span><i class="fa-regular fa-calendar mr-1"></i> Passed 2019</span>
-                            <span><i class="fa-solid fa-percent mr-1"></i> Percentage: 93.16%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section id="contact" class="py-20 md:py-28 bg-brand-light border-t border-gray-200 relative overflow-hidden">
+        <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-teal-100 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-amber-100 rounded-full blur-3xl opacity-50"></div>
 
-            <div>
-                <h2 class="text-2xl font-bold text-brand-dark mb-6 flex items-center gap-3">
-                    <i class="fa-solid fa-award text-brand-primary"></i> Awards & Responsibilities
-                </h2>
-                <div class="space-y-4">
-                    <div class="flex gap-4 bg-brand-light p-4 rounded-lg border border-gray-100">
-                        <div class="text-2xl text-yellow-500 mt-1"><i class="fa-solid fa-trophy"></i></div>
-                        <div>
-                            <h4 class="font-bold text-brand-dark">Rising Star Award</h4>
-                            <p class="text-sm text-brand-secondary font-medium">Incture Technologies</p>
-                            <p class="text-xs text-gray-500 mt-1">Awarded Multiple Quarters: Q3 2023-24, Q1 2024-25, Q4 2025-26</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4 bg-brand-light p-4 rounded-lg border border-gray-100">
-                        <div class="text-2xl text-red-500 mt-1"><i class="fa-solid fa-circle-h"></i></div>
-                        <div>
-                            <h4 class="font-bold text-brand-dark">Youth Red Cross - Joint Secretary</h4>
-                            <p class="text-sm text-brand-secondary font-medium">Leadership Council</p>
-                            <p class="text-xs text-gray-500 mt-1">Tenure: 2019 - 2023</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contact" class="py-16 md:py-24 bg-brand-light border-t border-gray-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">Let's Connect</h2>
-            <div class="h-1 w-20 bg-brand-primary mx-auto mt-4 rounded mb-6"></div>
-            <p class="text-lg text-brand-secondary max-w-xl mx-auto mb-10">
-                Whether you have an interesting enterprise project, a backend architecture challenge, or an opportunity that fits my profile, feel free to reach out!
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-5xl font-serif font-bold text-brand-dark mb-6">Let's build something great.</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
+                Whether you want to discuss enterprise architecture, have an exciting opportunity, or just want to chat about tech (or share photography tips!), my inbox is always open.
             </p>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto mb-12">
-                <a href="tel:+917448430573" class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center">
-                    <i class="fa-solid fa-phone text-2xl text-brand-primary mb-3"></i>
-                    <span class="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Call Me</span>
-                    <span class="text-sm font-semibold text-brand-dark">+91 7448430573</span>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="mailto:ram20062001@gmail.com" class="w-full sm:w-auto bg-brand-primary text-white hover:bg-teal-800 px-8 py-4 rounded-full font-medium text-lg shadow-lg transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-paper-plane"></i> Send an Email
                 </a>
-                <a href="mailto:ram20062001@gmail.com" class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center">
-                    <i class="fa-solid fa-envelope text-2xl text-brand-primary mb-3"></i>
-                    <span class="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Email Me</span>
-                    <span class="text-sm font-semibold text-brand-dark truncate w-full max-w-[180px]">ram20062001@gmail.com</span>
+                <a href="https://linkedin.com/in/ram-prasanth-y" target="_blank" class="w-full sm:w-auto bg-white border border-gray-200 text-brand-dark hover:border-brand-primary hover:text-brand-primary px-8 py-4 rounded-full font-medium text-lg shadow-sm transition-all flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-linkedin text-xl"></i> Connect on LinkedIn
                 </a>
-                <a href="https://linkedin.com/in/ram-prasanth-y" target="_blank" class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center">
-                    <i class="fa-brands fa-linkedin text-2xl text-brand-primary mb-3"></i>
-                    <span class="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">LinkedIn</span>
-                    <span class="text-sm font-semibold text-brand-dark">ram-prasanth-y</span>
-                </a>
+            </div>
+
+            <div class="mt-16 flex items-center justify-center gap-8 text-gray-500 font-medium">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-phone"></i> +91 7448430573</span>
+                <span class="hidden sm:inline-block w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-graduation-cap"></i> B.E. CSE (CIT)</span>
             </div>
         </div>
     </section>
 
-    <footer class="bg-brand-dark text-white py-8">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-            <p class="text-sm text-gray-400">&copy; 2026 Ram Prasanth Y. All rights reserved.</p>
-            <p class="text-xs text-gray-500">Built with HTML5 & Tailwind CSS</p>
+    <footer class="bg-brand-dark text-gray-400 py-10 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <p class="text-lg font-serif font-bold text-white mb-1">Ram Prasanth Y</p>
+                <p class="text-sm">Java Backend Developer based in Bangalore.</p>
+            </div>
+            <p class="text-sm">&copy; 2026. All rights reserved.</p>
         </div>
     </footer>
 
