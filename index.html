@@ -94,16 +94,31 @@
             background-clip: text;
         }
 
-        /* Frosty Glassmorphism with Dynamic Spotlight */
-        .dynamic-highlight {
-            position: relative;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.6); /* Highly transparent white */
-            backdrop-filter: blur(24px); /* Heavy blur for the frosted effect */
+        /* Static Frosty Glass for Navigation (No Movement) */
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
             border: 1px solid rgba(255, 255, 255, 0.8);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy hover */
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .nav-glass:hover {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(79, 70, 229, 0.2);
+        }
+
+        /* Frosty Glassmorphism with Dynamic Spotlight for Cards */
+        .dynamic-highlight {
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(24px); 
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
         .dynamic-highlight::before {
@@ -205,10 +220,11 @@
     <!-- Dot Pattern -->
     <div class="fixed inset-0 z-[-1] bg-dots pointer-events-none"></div>
 
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-2xl dynamic-highlight rounded-full px-6 py-4 transition-all duration-300">
+    <!-- Navigation Bar - Now uses nav-glass to prevent moving/jumping -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-2xl nav-glass rounded-full px-6 py-4">
         <div class="flex justify-between items-center">
             <a href="#" class="font-display font-extrabold text-2xl text-slateDark tracking-tight flex items-center gap-2 hover-trigger hover:text-primary transition-colors">
-                <i class="fas fa-layer-group text-primary text-xl"></i> RP.
+                <i class="fas fa-layer-group text-primary text-xl"></i> _RP.
             </a>
             <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-500">
                 <a href="#expertise" class="hover:text-primary transition-colors hover-trigger">Competencies</a>
@@ -401,7 +417,6 @@
 
     <section id="contact" class="py-32 px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div class="max-w-3xl mx-auto dynamic-highlight bg-white/90 p-14 rounded-[2.5rem] border border-white reveal relative overflow-hidden interactive-box hover-trigger">
-            <!-- Decorative blur blob inside contact card -->
             <div class="absolute top-[-50px] right-[-50px] w-48 h-48 bg-indigo-400/20 rounded-full blur-[50px] pointer-events-none"></div>
             
             <h2 class="text-5xl md:text-6xl font-display font-extrabold text-slateDark mb-6 relative z-10 tracking-tight">Let's Build <span class="text-gradient">Together</span></h2>
@@ -511,7 +526,7 @@
             };
 
             window.addEventListener('scroll', handleScroll);
-            handleScroll(); // Init on load
+            handleScroll(); 
         });
     </script>
 </body>
